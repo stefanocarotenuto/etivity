@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nativi digitali vs Migranti digitali - E‐tivity I - Carotenuto Stefano</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #f5f5f5, #ddd);
+            color: white;
+            min-height: 100vh;
+        }
+        .category-btn {
+            transition: all 0.3s ease;
+        }
+        .category-btn:hover {
+            transform: scale(1.05);
+        }
+        .category-btn:active {
+            transform: scale(0.95);
+        }
+        .content-section {
+            background-color: white;
+            color: #333;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            display: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .content-section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .content-item {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .content-section.active .content-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nativi-content {
+            border-left: 8px solid #0d6efd;
+        }
+        .migranti-content {
+            border-left: 8px solid #198754;
+        }
+        .critiche-content {
+            border-left: 8px solid #ffc107;
+        }
+        .sintesi-content {
+            border-left: 8px solid #0dcaf0;
+        }
+        .card {
+            height: 100%;
+        }
+        .video-card {
+            padding: 0 !important;
+        }
+        .video-card video {
+            width: 100%;
+            height: auto;
+        }
+        .video-bg {
+            width: 100%;
+            opacity: 1;
+            pointer-events: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .video-snapshot {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <header class="mb-5 bg-dark text-white p-4 rounded">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="text-center text-md-start display-6 mb-3">Nativi digitali vs Migranti digitali</h1>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-center text-md-end d-grid small">
+                        <ul class="list-unstyled small d-grid gap-2">
+                          <li>Insegnamento: Nuovi media nei contesti di apprendimento</li>
+                          <li>E‐tivity I Modulo: Tecnologie, società, apprendimento</li>
+                          <li>Docente: Prof.ssa Ines Tedesco</li>
+                          <li>Tutor disciplinare: Prof.ssa Giorgia Ruzzante</li>
+                          <li>Candidato: Stefano Carotenuto (Matricola 8987)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="row mb-4" id="categoryButtons">
+            <div class="col-md-3 mb-2">
+                <button class="btn btn-primary w-100 category-btn" data-category="nativi">
+                    <i class="bi bi-phone me-2"></i>Nativi digitali
+                </button>
+            </div>
+            <div class="col-md-3 mb-2">
+                <button class="btn btn-success w-100 category-btn" data-category="migranti">
+                    <i class="bi bi-book me-2"></i>Migranti digitali
+                </button>
+            </div>
+            <div class="col-md-3 mb-2">
+                <button class="btn btn-warning w-100 category-btn" data-category="critiche">
+                    <i class="bi bi-exclamation-circle me-2"></i>Critiche e dubbi
+                </button>
+            </div>
+            <div class="col-md-3 mb-2">
+                <button class="btn btn-info w-100 category-btn" data-category="sintesi">
+                    <i class="bi bi-lightbulb me-2"></i>Sintesi critica
+                </button>
+            </div>
+        </nav>
+
+        <main>
+            <section id="nativi" class="content-section p-4 nativi-content">
+                <video class="video-bg d-md-none mb-3" muted loop preload="metadata">
+                    <source src="v/nativi-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                    <img class="video-snapshot d-md-none" alt="Video Snapshot">
+                </video>
+                <h2 class="mt-3 mb-3 text-center display-5">Nativi digitali</h2>
+                <p class="lead text-muted pb-4 text-center">
+                  La generazione digitale
+                </p>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Nati nell'era digitale</h5>
+                                <p class="card-text">Generalmente considerati coloro nati dopo il 1980-1990, quando le tecnologie digitali sono diventate onnipresenti. Crescendo con l'accesso costante alla tecnologia, questi individui hanno sviluppato un'alta familiarità con gli strumenti digitali fin dalla tenera età.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Intuizione tecnologica</h5>
+                                <p class="card-text">Mostrano un'apparente facilità nell'uso di dispositivi e software, spesso percepita come un'abilità innata. La loro capacità di adattarsi rapidamente alle nuove tecnologie è notevole.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Multitasking</h5>
+                                <p class="card-text">Tendono a gestire simultaneamente più flussi di informazioni, passando rapidamente tra diverse attività digitali. Questa abilità è spesso vista come una competenza chiave nella moderna società connessa.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Apprendimento non lineare</h5>
+                                <p class="card-text">Preferiscono un approccio esplorativo all'apprendimento, navigando liberamente tra diverse fonti di informazione. Questo stile di apprendimento può favorire una comprensione più profonda e connessa dei temi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Comunicazione visuale</h5>
+                                <p class="card-text">Prediligono contenuti visivi e interattivi, con una forte inclinazione verso la comunicazione multimediale. Questo li porta a utilizzare frequentemente immagini, video e grafica nei loro scambi quotidiani.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch video-card">
+                        <div class="card border-0">
+                            <div class="card-body p-3">
+                                <video class="rounded nativi-content d-none d-md-block" autoplay muted loop>
+                                    <source src="v/nativi-video.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="migranti" class="content-section p-4 migranti-content">
+                <video class="video-bg d-md-none mb-3" muted loop preload="metadata">
+                    <source src="v/migranti-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                    <img class="video-snapshot d-md-none" alt="Video Snapshot">
+                </video>
+                <h2 class="mt-3 mb-3 text-center display-5">Migranti digitali</h2>
+                <p class="lead text-muted pb-4 text-center">
+                  Adattamento all'era digitale
+                </p>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Adattamento tecnologico</h5>
+                                <p class="card-text">Nati prima dell'era digitale, hanno dovuto imparare e adattarsi alle nuove tecnologie in età adulta. Questo processo di adattamento può essere graduale e richiedere un impegno significativo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Approccio cauto</h5>
+                                <p class="card-text">Tendono ad avere un approccio più prudente e riflessivo nell'adozione e nell'uso delle nuove tecnologie. La loro esperienza pre-digitale può influenzare il modo in cui percepiscono e utilizzano gli strumenti digitali.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Pensiero sequenziale</h5>
+                                <p class="card-text">Preferiscono processi di apprendimento e problem-solving lineari e strutturati. Questo stile di pensiero può contrastare con il multitasking non lineare dei nativi digitali, ma offre comunque un valore significativo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Comunicazione tradizionale</h5>
+                                <p class="card-text">Spesso prediligono forme di comunicazione più tradizionali, come il testo scritto o le interazioni faccia a faccia. Questa preferenza può essere vista come un punto di forza nel mantenere profonde connessioni personali.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Valorizzazione dell'analogico</h5>
+                                <p class="card-text">Mantengono un legame con metodi e strumenti pre-digitali, integrandoli con le nuove tecnologie. Questa integrazione permette di utilizzare il meglio di entrambi i mondi per un approccio più equilibrato.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch video-card">
+                        <div class="card border-0">
+                            <div class="card-body p-3">
+                                <video class="rounded migranti-content d-none d-md-block" autoplay muted loop>
+                                    <source src="v/migranti-video.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="critiche" class="content-section p-4 critiche-content">
+                <video class="video-bg d-md-none mb-3" muted loop preload="metadata">
+                    <source src="v/critiche-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                    <img class="video-snapshot d-md-none" alt="Video Snapshot">
+                </video>
+                <h2 class="mt-3 mb-3 text-center display-5">Critiche e dubbi</h2>
+                <p class="lead text-muted pb-4 text-center">
+                  Mettendo in discussione il divario digitale
+                </p>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Mancanza di prove empiriche</h5>
+                                <p class="card-text">Gli studi empirici non hanno fornito prove conclusive dell'esistenza di differenze cognitive significative tra le generazioni. Questa mancanza di evidenza solleva dubbi sulla validità delle categorizzazioni tra nativi e migranti digitali.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Generalizzazione eccessiva</h5>
+                                <p class="card-text">La teoria tende a semplificare eccessivamente la complessità delle competenze digitali individuali. Ogni persona può avere un livello diverso di competenza digitale, indipendentemente dalla generazione di appartenenza.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Fattori socio-economici ignorati</h5>
+                                <p class="card-text">Non tiene conto dell'influenza di fattori come l'accesso alla tecnologia, l'istruzione e il contesto culturale. Questi elementi possono avere un impatto significativo sul modo in cui le persone utilizzano e comprendono la tecnologia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Rischio di determinismo tecnologico</h5>
+                                <p class="card-text">Assume erroneamente che l'esposizione alla tecnologia determini automaticamente competenze e attitudini. Questo approccio può portare a una visione riduttiva delle capacità umane.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Sottovalutazione dell'adattabilità</h5>
+                                <p class="card-text">Non riconosce adeguatamente la capacità di molti adulti di sviluppare elevate competenze digitali. L'adattabilità e la capacità di apprendere nuove tecnologie non dovrebbero essere sottovalutate.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch video-card">
+                        <div class="card border-0">
+                            <div class="card-body p-3">
+                                <video class="rounded critiche-content d-none d-md-block" autoplay muted loop>
+                                    <source src="v/critiche-video.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sintesi" class="content-section p-4 sintesi-content">
+                <video class="video-bg d-md-none mb-3" muted loop preload="metadata">
+                    <source src="v/sintesi-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                    <img class="video-snapshot d-md-none" alt="Video Snapshot">
+                </video>
+                <h2 class="mt-3 mb-3 text-center display-5">Sintesi critica</h2>
+                <p class="lead text-muted pb-4 text-center">
+                  Verso una comprensione della complessità
+                </p>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Competenze multidimensionali</h5>
+                                <p class="card-text">Le abilità digitali sono influenzate da una varietà di fattori, non solo dall'età o dalla generazione di appartenenza. Una visione più sfumata riconosce la complessità delle competenze individuali.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Esposizione non equivale a competenza</h5>
+                                <p class="card-text">L'uso precoce della tecnologia non garantisce automaticamente competenze digitali avanzate o critiche. L'educazione e l'uso consapevole della tecnologia sono fattori cruciali.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Adattabilità intergenerazionale</h5>
+                                <p class="card-text">Molti "Migranti digitali" hanno sviluppato eccellenti competenze digitali, talvolta superando i più giovani. L'adattabilità e la capacità di apprendimento continuo sono qualità essenziali.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Saggezza digitale</h5>
+                                <p class="card-text">L'enfasi dovrebbe essere posta sull'uso critico e consapevole della tecnologia, più che sulle mere abilità tecniche. La saggezza digitale implica un uso etico e responsabile della tecnologia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Apprendimento continuo</h5>
+                                <p class="card-text">L'educazione digitale dovrebbe essere un processo lifelong, adattato alle esigenze di tutte le generazioni. La capacità di apprendere e adattarsi è fondamentale in un mondo in continua evoluzione.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col content-item d-flex align-items-stretch video-card">
+                        <div class="card border-0">
+                            <div class="card-body p-3">
+                                <video class="rounded sintesi-content d-none d-md-block" autoplay muted loop>
+                                    <source src="v/sintesi-video.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="bg-dark text-white text-center py-3 mt-5 small rounded">
+            <div class="container">
+                <p class="mb-1">Sito sviluppato utilizzando:</p>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">HTML</li>
+                    <li class="list-inline-item">CSS</li>
+                    <li class="list-inline-item">JavaScript</li>
+                    <li class="list-inline-item">Bootstrap 5</li>
+                    <li class="list-inline-item">Video in licenza con Adobe Express</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.content-section');
+            const buttons = document.querySelectorAll('.category-btn');
+            const videoBgElements = document.querySelectorAll('.video-bg');
+
+            function showSection(sectionId) {
+                sections.forEach(section => {
+                    if (section.id === sectionId) {
+                        section.classList.add('active');
+                        setTimeout(() => {
+                            section.querySelectorAll('.content-item').forEach((item, index) => {
+                                setTimeout(() => item.style.transition = `opacity 0.5s ease ${index * 100}ms, transform 0.5s ease ${index * 100}ms`, 0);
+                            });
+                        }, 50);
+                    } else {
+                        section.classList.remove('active');
+                    }
+                });
+            }
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const categoryId = button.getAttribute('data-category');
+                    showSection(categoryId);
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                });
+            });
+
+            showSection('nativi');
+            buttons[0].classList.add('active');
+
+            videoBgElements.forEach(video => {
+                video.addEventListener('loadeddata', () => {
+                    captureFrame(video);
+                });
+            });
+
+            function captureFrame(video) {
+                const canvas = document.createElement('canvas');
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                const context = canvas.getContext('2d');
+                context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                const snapshot = video.querySelector('.video-snapshot');
+                snapshot.src = canvas.toDataURL('image/png');
+            }
+        });
+    </script>
+</body>
+</html>
